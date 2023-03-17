@@ -1,18 +1,16 @@
 "use strict";
-// SELECT ELEMENTS
+
 const form = document.getElementById("todoform");
 const todoInput = document.getElementById("newtodo");
 const todosListEl = document.getElementById("todos-list");
 const notificationEl = document.querySelector(".notification");
 
-// VARS
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 let EditTodoId = -1;
 
-// 1st render
 renderTodos();
 
-// FORM SUBMIT
+//SUBMIT
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -21,7 +19,6 @@ form.addEventListener("submit", function (event) {
   localStorage.setItem("todos", JSON.stringify(todos));
 });
 
-// SAVE TODO
 function saveTodo() {
   const todoValue = todoInput.value;
 
@@ -56,7 +53,6 @@ function saveTodo() {
   }
 }
 
-// RENDER TODOS
 function renderTodos() {
   if (todos.length === 0) {
     todosListEl.innerHTML = "<center>Nothing to do!</center>";
@@ -85,14 +81,13 @@ function renderTodos() {
   });
 }
 
-// CLICK EVENT LISTENER FOR ALL THE TODOS
+// EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener("click", (event) => {
   const target = event.target;
   const parentElement = target.parentNode;
 
   if (parentElement.className !== "todo") return;
 
-  // t o d o id
   const todo = parentElement;
   const todoId = Number(todo.id);
 
