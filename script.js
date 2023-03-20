@@ -55,11 +55,11 @@ function saveTodo() {
 
 function renderTodos() {
   if (todos.length === 0) {
-    todosListEl.innerHTML = "<center>Nothing to do!</center>";
+    todosListEl.innerHTML = "<center>To do list is empty!</center>";
     return;
   }
 
-  // CLEAR ELEMENT BEFORE A RE-RENDER
+  // CLEAR ELEMENT BEFORE RE-RENDERING
   todosListEl.innerHTML = "";
 
   // RENDER TODOS
