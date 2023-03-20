@@ -67,15 +67,17 @@ function renderTodos() {
     todosListEl.innerHTML += `
     <div class="todo" id=${index}>
       <i 
-        class="bi ${todo.checked ? "bi-check-circle-fill" : "bi-circle"}"
+        class="bi ${
+          todo.checked ? "fa-regular fa-circle-check" : "fa-regular fa-circle"
+        }"
         style="color : ${todo.color}"
         data-action="check"
       ></i>
       <p class="${todo.checked ? "checked" : ""}" data-action="check">${
       todo.value
     }</p>
-      <i class="bi bi-pencil-square" data-action="edit"></i>
-      <i class="bi bi-trash" data-action="delete"></i>
+      <i class="fa-regular fa-pen-to-square" data-action="edit"></i>
+      <i class="fa-regular fa-trash-can" data-action="delete"></i>
     </div>
     `;
   });

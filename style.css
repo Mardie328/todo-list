@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
 :root {
   --container-height: 600px;
@@ -29,14 +29,12 @@ body {
   background-color: antiquewhite;
   width: var(--contaier-width);
   height: var(--container-height);
-
   position: relative;
   overflow: hidden;
 }
 header {
   width: 100%;
   height: var(--header-height);
-  background-image: url("./header-bg-img.jpg");
   background-size: cover;
   border-radius: 5px 5px 0 0;
 }
@@ -64,38 +62,39 @@ header {
   background-color: transparent;
   border: none;
   border-right: 0px;
-  outline: transparent;
+  outline: none;
   padding-left: 0.5rem;
   font-size: 1rem;
-  color: #fff;
+  color: black;
 }
 .new-todo form button {
   width: 60px;
   height: 40px;
   font-size: 1rem;
-  background-color: transparent;
-  color: #000;
+  background-color: rgb(255, 187, 99);
+  color: black;
   border: none;
-  border-left: 0px;
+  border-radius: 8px;
+  margin-right: 10px;
   cursor: pointer;
 }
 .new-todo form button:hover {
-  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
 }
 
 #todos-list {
   height: calc(var(--container-height) - var(--header-height));
-  background-color: #fff;
+  background-color: rgb(253, 247, 240);
   padding: 0.5rem;
   border: 1px solid rgb(219, 219, 219);
-  overflow: scroll;
+  overflow: auto;
   border-radius: 0 0 5px 5px;
 }
 
 #todos-list .todo {
   display: flex;
   align-items: center;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0rem;
   border-radius: 5px;
 }
 #todos-list .todo:hover {
@@ -111,17 +110,6 @@ header {
 #todos-list .todo p {
   flex: 1;
   word-break: break-all;
-}
-.checked {
-  text-decoration: line-through;
-  color: grey;
-}
-#todos-list .todo .bi-pencil-square {
-  color: rgb(31, 177, 48);
-}
-#todos-list .todo .bi-trash {
-  color: rgb(236, 82, 82);
-  margin: 0;
 }
 
 .notification {
